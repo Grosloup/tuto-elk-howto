@@ -50,7 +50,7 @@ dans /etc/apt/sources.list retirer la ligne deb-src d'elasticsearch
 
 apt-get update && apt-get install elasticsearch
 
-###Lancer logstash au boot
+###Lancer elasticsearch au boot
 
 update-rc.d elasticsearch defaults 95 10
 
@@ -74,7 +74,7 @@ wget https://raw.githubusercontent.com/sbagmeijer/ulyaoth/master/guides/logstash
 
 modifier kibana.conf (server_name...), créer les fichiers de log, protéger le répertoire...
 
-###Lancer logstash au boot
+###Lancer kibana au boot
 
 cd /etc/init.d && wget https://gist.githubusercontent.com/thisismitch/8b15ac909aed214ad04a/raw/bce61d85643c2dcdfbc2728c55a41dab444dca20/kibana4
 
