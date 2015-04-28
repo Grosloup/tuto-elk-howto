@@ -30,6 +30,12 @@ apt-get update && apt-get install logstash
 
 update-rc.d logstash defaults 95 10
 
+fichier de configuration au demarrage dans /etc/logstash/conf.d
+
+###Lancer/arreter/status/redemarrage
+
+service logstash start|stop|status|restart
+
 ##Installation d'elasticsearch
 
 ###Installation des sources
@@ -47,3 +53,38 @@ apt-get update && apt-get install elasticsearch
 ###Lancer logstash au boot
 
 update-rc.d elasticsearch defaults 95 10
+
+###Lancer/arreter/status/redemarrage
+
+service elasticsearch start|stop|status|restart
+
+##Installation de kibana
+
+cd /var/www
+
+wget https://download.elastic.co/kibana/kibana/kibana-4.0.2-linux-x64.tar.gz
+
+tar xvf kibana-4.0.2-linux-x64.tar.gz
+
+mv kibana-4.0.2-linux-x64.tar.gz kibana
+
+##Création d'un vhost (nginx)
+
+wget https://raw.githubusercontent.com/sbagmeijer/ulyaoth/master/guides/logstash/nginx/vhost/kibana4.conf -O /etc/nginx/sites-available/kibana.conf
+
+modifier kibana.conf (server_name...), créer les fichiers de log, protéger le répertoire...
+
+###Lancer logstash au boot
+
+cd /etc/init.d && wget https://gist.githubusercontent.com/thisismitch/8b15ac909aed214ad04a/raw/bce61d85643c2dcdfbc2728c55a41dab444dca20/kibana4
+
+modifier kibana4 (chemin vers bin/kibana)
+
+chmod +x /etc/init.d/kibana4
+
+update-rc.d kibana4 defaults 96 9
+
+###Lancer/arreter/status/redemarrage
+
+service kibana4 start|stop|status|restart
+
