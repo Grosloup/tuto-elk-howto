@@ -74,6 +74,18 @@ wget https://raw.githubusercontent.com/sbagmeijer/ulyaoth/master/guides/logstash
 
 modifier kibana.conf (server_name...), créer les fichiers de log, protéger le répertoire...
 
+mkdir /var/log/nginx/kibana
+
+touch /var/log/nginx/kibana/access.log
+
+touch /var/log/nginx/kibana/error.log
+
+chown -R www-data:www-data /var/log/nginx/kibana
+
+ln -s /etc/nginx/sites-available/kibana.conf /etc/nginx/sites-enabled/
+
+service nginx reload
+
 ###Lancer kibana au boot
 
 cd /etc/init.d && wget https://gist.githubusercontent.com/thisismitch/8b15ac909aed214ad04a/raw/bce61d85643c2dcdfbc2728c55a41dab444dca20/kibana4
