@@ -32,6 +32,8 @@ update-rc.d logstash defaults 95 10
 
 fichier de configuration au demarrage dans /etc/logstash/conf.d
 
+[voir]() config à améliorer
+
 ###Lancer/arreter/status/redemarrage
 
 service logstash start|stop|status|restart
