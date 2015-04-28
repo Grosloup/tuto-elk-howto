@@ -70,7 +70,7 @@ mv kibana-4.0.2-linux-x64.tar.gz kibana
 
 ##Création d'un vhost (nginx)
 
-wget https://raw.githubusercontent.com/sbagmeijer/ulyaoth/master/guides/logstash/nginx/vhost/kibana4.conf -O /etc/nginx/sites-available/kibana.conf
+wget https://raw.githubusercontent.com/Grosloup/tuto-elk-howto/master/kibana.conf -O /etc/nginx/sites-available/kibana.conf
 
 modifier kibana.conf (server_name...), créer les fichiers de log, protéger le répertoire...
 
