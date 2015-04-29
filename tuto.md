@@ -32,14 +32,15 @@ update-rc.d logstash defaults 95 10
 
 fichier de configuration au demarrage dans /etc/logstash/conf.d
 
+ajout pattern (grok)
+
 mkdir /opt/logstash/patterns
 
 cd /opt/logstash/patterns
 
-wget
+wget https://github.com/Grosloup/tuto-elk-howto/blob/master/patterns/nginx
 
 chown -R logstash:logstash /opt/logstash/patterns
-
 
 [voir](https://github.com/Grosloup/tuto-elk-howto/blob/master/logstash.conf) config à améliorer
 
