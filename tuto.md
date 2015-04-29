@@ -32,7 +32,16 @@ update-rc.d logstash defaults 95 10
 
 fichier de configuration au demarrage dans /etc/logstash/conf.d
 
-[voir]() config à améliorer
+mkdir /opt/logstash/patterns
+
+cd /opt/logstash/patterns
+
+wget
+
+chown -R logstash:logstash /opt/logstash/patterns
+
+
+[voir](https://github.com/Grosloup/tuto-elk-howto/blob/master/logstash.conf) config à améliorer
 
 ###Lancer/arreter/status/redemarrage
 
