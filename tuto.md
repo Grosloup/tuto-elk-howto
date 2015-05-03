@@ -28,6 +28,10 @@ apt-get update && apt-get install logstash
 
 ###Lancer logstash au boot
 
+modifier /etc/init.d/logstash
+
+retirer 'agent' dans args
+
 update-rc.d logstash defaults 95 10
 
 fichier de configuration au demarrage dans /etc/logstash/conf.d
